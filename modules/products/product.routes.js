@@ -9,6 +9,8 @@ const multer = require('./../../utils/middlewares/multer');
 
 const router = express.Router();
 
+router.route("/buy/:id")
+.post(authToken,productsController.buy)
 
 router.route("/")
     .get(authToken,isAdminMiddleware,productsController.getAll)
@@ -18,6 +20,5 @@ router.route("/")
 router.route("/:id")
     .delete(authToken,isAdminMiddleware,productsController.remove)
     .put(authToken,isAdminMiddleware,productsController.update)
-
 
 module.exports = router

@@ -41,7 +41,12 @@ const schema = new mongoose.Schema({
     discount :{
         type : Number,
         required: false
+    },
+    Bought: {
+        type : Number,
+        required: false
     }
+
 
 },{timestamps: true})
 

@@ -42,6 +42,10 @@ const productValidator = () => {
       .isNumeric()
       .withMessage("تخفیف باید عدد باشد")
       .optional(),
+    body("Bought")
+      .isNumeric()
+      .withMessage("تعداد باید عدد باشد")
+      .optional(),
         
     
       

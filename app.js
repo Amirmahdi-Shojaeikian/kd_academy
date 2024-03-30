@@ -5,6 +5,9 @@ const categoryArticlesRoutes =require("./modules/category.articles/category.rout
 const categoryProductsRoutes =require("./modules/category.products/category.routes");
 const productsRoutes =require("./modules/products/product.routes");
 const articlesRoutes =require("./modules/articles/articles.routes");
+const contactsRoutes =require("./modules/contact/contact.routes");
+const basketsRoutes =require("./modules/basket/basket.routes");
+const productsUserRoutes =require("./modules/product_user/product_user.routes");
 const cookieParser = require("cookie-parser")
 require("./config/db");
 require("dotenv").config();
@@ -15,12 +18,15 @@ app.use(cookieParser("kdAmsh"))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
+app.use("/products",productsRoutes)
 app.use("/auth",authRoutes)
 app.use("/users",usersRoutes)
 app.use("/categoryArticles",categoryArticlesRoutes)
 app.use("/categoryProducts",categoryProductsRoutes)
 app.use("/articles",articlesRoutes)
-app.use("/products",productsRoutes)
+app.use("/contacts",contactsRoutes)
+app.use("/productsUser",productsUserRoutes)
+app.use("/baskets",basketsRoutes)
 
 
 
