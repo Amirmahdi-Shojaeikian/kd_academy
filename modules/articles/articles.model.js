@@ -13,10 +13,6 @@ const schema = new mongoose.Schema({
        type: String,
        required: true
    },
-   cover:{
-       type: String,
-       required: true
-   },
    creator:{
     type: mongoose.Types.ObjectId,
     ref: "User",
@@ -37,7 +33,7 @@ const schema = new mongoose.Schema({
        default:0,
        required: true
    },
-   imageBody:{
+   image:{
     type: Array,
     required: true
    }

@@ -14,7 +14,7 @@ exports.create = async (req, res) => {
     // console.log(req.file.cover);
     const {title,description,body,cover,href,category,published} = req.body;
     const article = await articlesModel.create
-    ({title,description,body,cover:req.file.filename,creator:req.isAdmin._id,href,category,published})
+    ({title,description,body,creator:req.isAdmin._id,href,category,published,image:req.files})
 
   return res.json(article)
 };
@@ -42,7 +42,7 @@ exports.update = async (req, res) => {
     const {title,description,body,cover,href,category,published} = req.body;
     if (mongoose.Types.ObjectId.isValid(id)) {
         const article = await articlesModel.findOneAndUpdate({_id : id},
-            {title,description,body,cover,href,category,published})
+            {title,description,body,href,category,published,imageBody})
         if (article) {
             return res.json(article)
         }
