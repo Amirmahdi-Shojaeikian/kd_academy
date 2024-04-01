@@ -10,6 +10,4 @@ module.exports = async (req, res, next) => {
       message : "this route for admin is already"
     })
   }
-
-
 };

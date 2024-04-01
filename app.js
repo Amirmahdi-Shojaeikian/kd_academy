@@ -7,6 +7,8 @@ const productsRoutes =require("./modules/products/product.routes");
 const articlesRoutes =require("./modules/articles/articles.routes");
 const contactsRoutes =require("./modules/contact/contact.routes");
 const basketsRoutes =require("./modules/basket/basket.routes");
+const searchRoutes =require("./modules/search/search.routes");
+const ticketRoutes =require("./modules/ticket/ticket.routes");
 const productsUserRoutes =require("./modules/product_user/product_user.routes");
 const cookieParser = require("cookie-parser")
 require("./config/db");
@@ -27,6 +29,8 @@ app.use("/articles",articlesRoutes)
 app.use("/contacts",contactsRoutes)
 app.use("/productsUser",productsUserRoutes)
 app.use("/baskets",basketsRoutes)
+app.use("/search",searchRoutes)
+app.use("/ticket",ticketRoutes)
 
 
 
